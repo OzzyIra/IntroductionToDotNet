@@ -1,4 +1,5 @@
-﻿
+﻿//#define NUMERIC_TYPES
+//#define LITERALS
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace DataTypes
         static readonly string delimiter2 = "\n=================================================\n";
         static void Main(string[] args)
         {
+#if NUMERIC_TYPES
             Console.WriteLine("C# DataTypes");
             #region Boolean
             //Console.WriteLine(bool.TrueString);
@@ -39,7 +41,22 @@ namespace DataTypes
             Console.Write($"Диапозон принимаемых значений 'UInt32': {UInt32.MinValue}....{UInt32.MaxValue}");
             Console.WriteLine(delimiter2);
 
-         
+#endif
+#if LITERALS
+            Console.WriteLine(123.GetType());   //int
+            Console.WriteLine(123u.GetType());  //uint    
+            Console.WriteLine(123l.GetType()); //long    
+            Console.WriteLine(123UL.GetType()); //long
+
+            Console.WriteLine(5d.GetType());    //double
+            Console.WriteLine(123.4.GetType()); //double
+            Console.WriteLine(123f.GetType());  //float
+            Console.WriteLine(123m.GetType());  //decimal
+#endif
+            Console.WriteLine(((byte)5).GetType().Name);
+
+
+
         }
     }
 }

@@ -134,13 +134,28 @@ namespace HomeWork
             {
                 for (int j = 0; j < number; j++)
                 {
-                    if (j % 2 == 0)
+                    if (i % 2 == 0)
                     {
-                        Console.Write("+");
+                        if (j % 2 == 0)
+                        {
+                            Console.Write("+");
+                        }
+                        else
+                        {
+                            Console.Write("-");
+                        }
                     }
                     else
                     {
-                        Console.Write("-");
+                        if (j % 2 == 0)
+                        {
+                            Console.Write("-");
+                        }
+                        else
+                        {
+                            Console.Write("+");
+                        }
+
                     }
                 }
                 Console.WriteLine();
